@@ -73,10 +73,15 @@ git diff <branch1>..<branch2>
 If there has been changes in one of the branches, and it is of interest to update one of the branches, then go to the branch which is outdated and use:
 
 ```
-git merge <updated_
+git merge <updated_branch>
 ```
 
+Once the branches are up to date, there is no need for the other branch. To delete a local or a remote branch use:
 
+```
+git branch -d <localbranch>
+git push origin --delete <remotebranch>
+```
 
 ## Remote repositories
 
