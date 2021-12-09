@@ -43,6 +43,20 @@ git reset
 Now is time to save the changes in the repository. For this use:
 
 ```
-git commit -m "<m>"
+git commit -m "<message>"
+```
+
+To check which commitments where done, and who did it, use:
+
+```
+git log
+```
+
+To create a branch, check which other branches there are, and switch between them, use:
+
+```
+git branch <branchname>
+git branch -a
+git checkout <b
 ```
 
