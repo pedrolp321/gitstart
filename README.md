@@ -57,6 +57,7 @@ To create a branch, check which other branches there are, and switch between the
 ```
 git branch <branchname>
 git branch -a
-git checkout <b
+git checkout <branchname>
 ```
 
+Once in the branch, to update and merge the changes made to it to the master branch, it is important to add and commit the changes on the branch before merging with the master branch. Else it won't work.
