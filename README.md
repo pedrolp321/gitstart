@@ -1,5 +1,7 @@
 # Git commands
 
+## Local repository
+
 ```
 git init
 ```
@@ -61,3 +63,12 @@ git checkout <branchname>
 ```
 
 Once in the branch, to update and merge the changes made to it to the master branch, it is important to add and commit the changes on the branch before merging with the master branch. Else it won't work.
+
+To check the differences between two branches, use:
+
+```
+git diff <branch1>..<branch2>
+```
+
+## Remote repositories
+
