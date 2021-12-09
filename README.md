@@ -70,5 +70,13 @@ To check the differences between two branches, use:
 git diff <branch1>..<branch2>
 ```
 
+If there has been changes in one of the branches, and it is of interest to update one of the branches, then go to the branch which is outdated and use:
+
+```
+git merge <updated_
+```
+
+
+
 ## Remote repositories
 
