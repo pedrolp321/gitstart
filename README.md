@@ -17,7 +17,7 @@ git config --global user.email "<email>"
 And use this command to check the current submitted information.
 
 ```
-git config --list
+git config -l
 ```
 
 If there are files containing personal data, or information, which is relevant just for the current machine, then include a `.gitignore` file, where the name or terminations of the files, which should not be synced, are written.
@@ -83,5 +83,63 @@ git branch -d <localbranch>
 git push origin --delete <remotebranch>
 ```
 
+To change the name of a branch, first checkout to the branch and change the name, then upload the the changes to the remote repository
+
+```
+git checkout <oldbranchname>
+git branch -m <newbranchname>
+```
+
+If the `<oldbranchname>` has already been uploaded to the remote repository, to change it perform the next steps:
+
+```
+git push origin -u <newbranchname>
+git push origin --delete <oldbranchname>
+```
+
 ## Remote repositories
 
+To upload and push a local repository to Github, first create an empty project `<projectname>` on Github, then run the following commands while staying on the local repository path:
+
+```
+git remote add origin https://github.com/<github_username>/<projectname>
+git push -u origin master
+```
+
+> **Important:** After an update on Github from August 2021, password authentication service is no longer supported for command line (see [this site](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/) for detailed information). Nonetheless a guide how to overcome this issue is already [on-line](https://stackoverflow.com/questions/68775869/support-for-password-authentication-was-removed-please-use-a-personal-access-to). 
+>
+> A summary of the commands to follow (after creating a personal access `<token>` on Github) are:
+>
+> ```
+> git config --global user.name "<github_username>"
+> git config --global user.email "<github_email>"
+> git config -l
+> ```
+>
+> Once GIT is configured, we can begin using it to access Github. Example:
+>
+> ```
+> git clone https://github.com/<github_username>/<projectname>
+> ...
+> Username for 'https://github.com' : <github_username>
+> Password for 'https://github.com' : <token>
+> ```
+>
+> Right after that, cache the given record in your computer to remembers the token:
+>
+> ```
+> git config --global credential.helper cache
+> ```
+>
+> If needed, anytime you can delete the cache record by:
+>
+> ```
+> git config --global --unset credential.helper
+> git config --system --unset credential.helper
+> ```
+>
+> Now try to pull with `-v` to verify
+>
+> ```
+> git pull -v
+> ```
