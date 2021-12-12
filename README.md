@@ -99,7 +99,7 @@ git push origin --delete <oldbranchname>
 
 ## Remote repositories
 
-To upload and push a local repository to Github, first create an empty project `<projectname>` on Github, then run the following commands while staying on the local repository path:
+To upload and push a local repository to Github, (making it into a remote repository) first create an empty project `<projectname>` on Github, then run the following commands while staying on the local repository path:
 
 ```
 git remote add origin https://github.com/<github_username>/<projectname>
@@ -143,3 +143,5 @@ git push -u origin master
 > ```
 > git pull -v
 > ```
+
+Test
