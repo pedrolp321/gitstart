@@ -92,11 +92,11 @@ git branch -m <newbranchname>
 
 If the `<oldbranchname>` has already been uploaded to the remote repository, to change it perform the next steps:
 
+<span style="color:orange">some red test</span>
 ```
 git push origin -u <newbranchname>
 git push origin --delete <oldbranchname>
 ```
-
 ## Remote repositories
 
 To upload and push a local repository to Github, (making it into a remote repository) first create an empty project `<projectname>` on Github, then run the following commands while staying on the local repository path:
@@ -144,4 +144,3 @@ git push -u origin master
 > git pull -v
 > ```
 
-Test
