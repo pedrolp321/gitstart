@@ -1,0 +1,2 @@
+some line added with vim and not aas
+another line, but this time with vi
