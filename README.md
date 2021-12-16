@@ -158,3 +158,4 @@ git log <(-p)> HEAD..origin/master
 
 1. To update the remote repository list to the local one
 2. To show the log entries between your last common commit and the origin's master branch.
+3. test
