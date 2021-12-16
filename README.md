@@ -51,10 +51,10 @@ git commit -m "<message>"
 To check which commitments where done, and who did it, use:
 
 ```
-git log <(-p)> <(branch)>
+git log <(option)> <(current_branch)>
 ```
 
-Use -p to show more details.
+Use -p on option to show more details.
 
 To create a branch, check which other branches there are, and switch between them, use:
 
@@ -110,9 +110,9 @@ git push -u origin master
 ```
 > <span style="color:orange">:red_circle:Check the second command</span>
 
-> **Important:** After an update on Github from August 2021, password authentication service is no longer supported for command line (see [this site](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/) for detailed information). Nonetheless a guide how to overcome this issue is already [on-line](https://stackoverflow.com/questions/68775869/support-for-password-authentication-was-removed-please-use-a-personal-access-to). 
+> **Important:** After an update on GitHub from August 2021, password authentication service is no longer supported for command line (see [this site](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/) for detailed information). Nonetheless a guide how to overcome this issue is already [on-line](https://stackoverflow.com/questions/68775869/support-for-password-authentication-was-removed-please-use-a-personal-access-to). 
 >
-> A summary of the commands to follow (after creating a personal access `<token>` on Github) are:
+> A summary of the commands to follow (after creating a personal access `<token>` on GitHub) are:
 >
 > ```
 > git config --global user.name "<github_username>"
@@ -120,7 +120,7 @@ git push -u origin master
 > git config -l
 > ```
 >
-> Once GIT is configured, we can begin using it to access Github. Example:
+> Once GIT is configured, we can begin using it to access GitHub. Example:
 >
 > ```
 > git clone https://github.com/<github_username>/<projectname>
@@ -153,9 +153,23 @@ After updating the information in the local repository, it is time to uplad the 
 ```
 git fetch
 git log <(-p)> HEAD..origin/master
-%git l
+git diff origin/master
+%git diff HEAD..origin/master
 ```
 
 1. To update the remote repository list to the local one
 2. To show the log entries between your last common commit and the origin's master branch.
-3. test
+3. Show the differences between the actual repository and the remote one. (Present elements in the local repo and not in the remote are <span style="color:green">green</span> and the ones present in the remote and not in the local are <span style="color:red">red</span>.
+4. Same as **3.** shows differences, but this time present elements in the remote repo and not in the local are <span style="color:green">green</span> and the ones present in the local and not in the remote are <span style="color:red">red</span>.
+
+> Additional Info:
+>
+> ```
+> git log <local_branch>
+> git log <(option = -p)> origin/master
+> git log <(option = -p)> HEAD..origin/master
+> ```
+>
+> 1. Shows all the commits on the local branch.
+> 2. Shows all the commits on the remote branch.
+> 3. Shows just the commits that are on the remote **and** not in the local branch.
