@@ -102,7 +102,9 @@ git push origin --delete <oldbranchname>
 
 ## Remote repositories
 
-To upload and push a local repository to Github, (making it into a remote repository) first create an empty project `<projectname>` on Github, then run the following commands while staying on the local repository path:
+### Uploading local repository online
+
+To upload and push a local repository to GitHub, (making it into a remote repository) first create an empty project `<projectname>` on GitHub, then run the following commands while staying on the local repository path:
 
 ```
 git remote add origin https://github.com/<github_username>/<projectname>
@@ -148,7 +150,9 @@ git push -u origin master
 > git pull -v
 > ```
 
-After updating the information in the local repository, it is time to uplad the changes to the remote repository. :exclamation:But first it is always usefull to check for changes in the remote repository:
+### Checking if the local repository is updated
+
+After updating the information in the local repository, it is time to upload the changes to the remote repository.:exclamation:But first it is always useful to check for changes in the remote repository:
 
 ```
 git fetch
@@ -162,14 +166,27 @@ git diff origin/master
 3. Show the differences between the actual repository and the remote one. (Present elements in the local repo and not in the remote are <span style="color:green">green</span> and the ones present in the remote and not in the local are <span style="color:red">red</span>.
 4. Same as **3.** shows differences, but this time present elements in the remote repo and not in the local are <span style="color:green">green</span> and the ones present in the local and not in the remote are <span style="color:red">red</span>.
 
+For more information, check this [link](https://stackoverflow.com/questions/180272/how-to-preview-git-pull).
+
 > Additional Info:
 >
 > ```
 > git log <local_branch>
 > git log <(option = -p)> origin/master
 > git log <(option = -p)> HEAD..origin/master
+> git checkout master
 > ```
 >
 > 1. Shows all the commits on the local branch.
 > 2. Shows all the commits on the remote branch.
 > 3. Shows just the commits that are on the remote **and** not in the local branch.
+> 4. While staying on the master branch, redundant, but displays a brief message informing which commits differ between master and origin/master,
+
+### Uploading recent changes
+
+Never forget to check that the staging area is empty, that means check with `git status` that there is nothing to add and commit. Once that done, to upload the changes to the remote repository, use:
+
+```
+git push -u origin master
+```
+
