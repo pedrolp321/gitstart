@@ -51,15 +51,17 @@ git commit -m "<message>"
 To check which commitments where done, and who did it, use:
 
 ```
-git log
+git log <(-p)> <(branch)>
 ```
+
+Use -p to show more details.
 
 To create a branch, check which other branches there are, and switch between them, use:
 
 ```
 git branch <branchname>
 git branch -a
-git checkout <branchname>
+git checkout <branchnam e>
 ```
 
 Once in the branch, to update and merge the changes made to it to the master branch, it is important to add and commit the changes on the branch before merging with the master branch. Else it won't work.
@@ -92,11 +94,12 @@ git branch -m <newbranchname>
 
 If the `<oldbranchname>` has already been uploaded to the remote repository, to change it perform the next steps:
 
-<span style="color:orange">some red test</span>
 ```
 git push origin -u <newbranchname>
 git push origin --delete <oldbranchname>
 ```
+> <span style="color:orange">:red_circle:Check the first command</span>
+
 ## Remote repositories
 
 To upload and push a local repository to Github, (making it into a remote repository) first create an empty project `<projectname>` on Github, then run the following commands while staying on the local repository path:
@@ -105,6 +108,7 @@ To upload and push a local repository to Github, (making it into a remote reposi
 git remote add origin https://github.com/<github_username>/<projectname>
 git push -u origin master
 ```
+> <span style="color:orange">:red_circle:Check the second command</span>
 
 > **Important:** After an update on Github from August 2021, password authentication service is no longer supported for command line (see [this site](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/) for detailed information). Nonetheless a guide how to overcome this issue is already [on-line](https://stackoverflow.com/questions/68775869/support-for-password-authentication-was-removed-please-use-a-personal-access-to). 
 >
@@ -144,3 +148,13 @@ git push -u origin master
 > git pull -v
 > ```
 
+After updating the information in the local repository, it is time to uplad the changes to the remote repository. :exclamation:But first it is always usefull to check for changes in the remote repository:
+
+```
+git fetch
+git log <(-p)> HEAD..origin/master
+%git l
+```
+
+1. To update the remote repository list to the local one
+2. To show the log entries between your last common commit and the origin's master branch.
