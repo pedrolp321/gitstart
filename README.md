@@ -158,12 +158,14 @@ After updating the information in the local repository, it is time to upload the
 git fetch
 git log <(-p)> HEAD..origin/master
 git diff origin/master
+git diff origin/master..HEAD
 %git diff HEAD..origin/master
 ```
 
 1. To update the remote repository list to the local one
 2. To show the log entries between your last common commit and the origin's master branch.
 3. Show the differences between the actual repository and the remote one. (Present elements in the local repo and not in the remote are <span style="color:green">green</span> and the ones present in the remote and not in the local are <span style="color:red">red</span>.
+3. Same as **3.**
 4. Same as **3.** shows differences, but this time present elements in the remote repo and not in the local are <span style="color:green">green</span> and the ones present in the local and not in the remote are <span style="color:red">red</span>.
 
 For more information, check this [link](https://stackoverflow.com/questions/180272/how-to-preview-git-pull).
@@ -174,12 +176,14 @@ For more information, check this [link](https://stackoverflow.com/questions/1802
 > git log <local_branch>
 > git log <(option = -p)> origin/master
 > git log <(option = -p)> HEAD..origin/master
+> git log <(option = -p)> origin/master..HEAD
 > git checkout master
 > ```
 >
 > 1. Shows all the commits on the local branch.
 > 2. Shows all the commits on the remote branch.
 > 3. Shows just the commits that are on the remote **and** not in the local branch.
+> 3. Shows just the commits that are on the local **and** not in the remote branch.
 > 4. While staying on the master branch, redundant, but displays a brief message informing which commits differ between master and origin/master,
 
 ### Uploading recent changes
