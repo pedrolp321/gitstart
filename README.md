@@ -92,7 +92,7 @@ git checkout <oldbranchname>
 git branch -m <newbranchname>
 ```
 
-git If the `<oldbranchname>` has already been uploaded to the remote repository, to change it perform the next steps:
+If the `<oldbranchname>` has already been uploaded to the remote repository, to change it perform the next steps:
 
 ```
 git push origin -u <newbranchname>
